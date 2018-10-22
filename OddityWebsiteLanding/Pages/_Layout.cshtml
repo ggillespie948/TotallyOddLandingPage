@@ -1,56 +1,96 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OddityWebsiteLanding</title>
+    <title>@ViewData["Title"] - Totally Odd </title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+       
     </environment>
-    <environment exclude="Development">
+    <environment exclude="Developmento">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/multilevel-push-menu/jquery.multilevelpushmenu.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+        <script>
+            window.addEventListener("load", function () {
+                window.cookieconsent.initialise({
+                    "palette": {
+                        "popup": {
+                            "background": "#343c66",
+                            "text": "#cfcfe8"
+                        },
+                        "button": {
+                            "background": "#f71559"
+                        }
+                    }
+                })
+            });
+        </script>
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-page="/Index" class="navbar-brand">OddityWebsiteLanding</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
+    
+    <div id="menu">
+        <nav>
+            <h2><i class="fa fa-reorder"></i>Totally Odd!</h2>
+            <ul>
+                <li>
+                    <a  href="#top">Home</a>
+                </li>
+                <li>
+                    <a href="#trailer">Trailer</a>
+                </li>
+                <li>
+                    <a href="#download">Download</a>
+                </li>
+                <li>
+                    <a href="#screenshots">Screenshots</a>
+                </li>
+                <li>
+                    <a href="#presskit">Press kit</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-desktop"></i>Developer</a>
+                    <h2><i class="fa fa-desktop"></i>Developer Links</h2>
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/studios_apex" onclick="location.replace('https://twitter.com/studios_apex'),'_top'">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="mailto:gzgillespie@outlook.com" onclick="location.replace('mailto:gzgillespie@outlook.com'),'_top'">Email</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+
+        
+
+    <div class="content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; 2017 - OddityWebsiteLanding</p>
+            <p>&copy; 2018 - Totally Odd Number Game  Copyright Apex Studios</p>
         </footer>
     </div>
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+
+
     </environment>
-    <environment exclude="Development">
+    <environment exclude="Developmento">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
@@ -63,7 +103,16 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/multilevel-push-menu/jquery.multilevelpushmenu.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="//oss.maxcdn.com/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+
+
+
     </environment>
 
     @RenderSection("Scripts", required: false)
